@@ -1,0 +1,17 @@
+<form>
+  <table>
+    <thead>
+    <tr>
+      <th>Time</th>
+      <th>Input</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let time of times">
+      <td>{{ time }}</td>
+      <td><input type="text" [(ngModel)]="inputs[time]" /></td>
+    </tr>
+    </tbody>
+  </table>
+  <button type="submit">Submit</button>
+</form>

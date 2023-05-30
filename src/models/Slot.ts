@@ -2,8 +2,9 @@ export class Slot {
 
   constructor(
     public slotId: string,
-    public slotIndex: number,
+    public startTime: string,
+    public endTime: string,
     public dayId: string,
-    public slotContent: string) {
+    public activity: string) {
   }
 }

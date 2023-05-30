@@ -1,17 +1,23 @@
-<form>
-  <table>
-    <thead>
-    <tr>
-      <th>Time</th>
-      <th>Input</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let time of times">
-      <td>{{ time }}</td>
-      <td><input type="text" [(ngModel)]="inputs[time]" /></td>
-    </tr>
-    </tbody>
-  </table>
-  <button type="submit">Submit</button>
-</form>
+<!--
+Either we start by doing a table
+Or we start by doing the form array of the things that I want
+-->
+
+<table>
+  <thead>
+  <tr>
+    <th>Time</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let slot of day.slots">
+    <td>
+      {{slot.startTime}}
+    </td>
+    <td>
+      <input [(ngModel)]="slot.activity" placeholder="Enter current activity">
+    </td>
+  </tr>
+  </tbody>
+</table>

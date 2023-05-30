@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {Day} from '../../models/Day';
+import {SlotFactory} from '../../models/factories/SlotFactory';
 
 @Component({
   selector: 'app-time-table',
@@ -8,25 +9,19 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 })
 
 
-export class TimeTableComponent { times: string[] = [];
-  inputs: { [key: string]: string } = {};
+export class TimeTableComponent implements OnInit {
+  day: Day;
 
-  constructor() {
-    this.generateTimeTable();
+
+  ngOnInit(): void {
+    // Getting the current Day
+    this.day = new Day('1', new Date(20, 2, 1998),
+      [SlotFactory.slot1().build(),
+        SlotFactory.slot2().build(),
+        SlotFactory.slot3().build(),
+        SlotFactory.slot4().build()]);
+    // Displaying the different Slots
   }
 
-  generateTimeTable() {
-    const startHour = 9;
-    const endHour = 18;
-    const interval = 30;
-
-    for (let hour = startHour; hour <= endHour; hour++) {
-      for (let minute = 0; minute < 60; minute += interval) {
-        const time = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
-        this.times.push(time);
-        this.inputs[time] = '';
-      }
-    }
-  }
 
 }

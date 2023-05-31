@@ -7,7 +7,6 @@ export class SlotFactory implements Factory<Slot> {
     private startTime: string,
     private dayId: number,
     private activity: string,
-    private endTime?: string,
 
   ) {
   }
@@ -52,7 +51,6 @@ export class SlotFactory implements Factory<Slot> {
     return new Slot(
       this.startTime,
       this.activity,
-      this.endTime,
 
     );
   }

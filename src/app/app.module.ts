@@ -4,8 +4,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TimeTableComponent} from './time-table/time-table.component';
-import {MatTableModule} from '@angular/material/table';
 import {FormsModule} from '@angular/forms';
+import {DayService} from "../services/day.service";
+import { HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -15,10 +16,10 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatTableModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DayService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

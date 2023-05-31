@@ -1,10 +1,10 @@
 export class Slot {
 
   constructor(
-    public slotId: string,
+    public id: number,
     public startTime: string,
     public endTime: string,
-    public dayId: string,
+    public dayId: number,
     public activity: string) {
   }
 }

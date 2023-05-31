@@ -24,7 +24,6 @@
               "src/assets"
             ],
             "styles": [
-              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -56,6 +55,14 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           }
         },
@@ -67,8 +74,12 @@
           "configurations": {
             "production": {
               "browserTarget": "timetable-front:build:production"
+            },
+            "development": {
+              "browserTarget": "timetable-front:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

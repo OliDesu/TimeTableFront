@@ -4,7 +4,7 @@ import {SlotFactory} from './SlotFactory';
 
 export class DayFactory implements Factory<Day> {
   constructor(
-    private dayId: string,
+    private dayId: number,
     private dayDate: Date,
     private slots: SlotFactory[]
   ) {
@@ -12,7 +12,7 @@ export class DayFactory implements Factory<Day> {
 
   public static day1(): DayFactory {
     return new DayFactory(
-      '1',
+      1,
       new Date('12/09/1998'),
       []
     );

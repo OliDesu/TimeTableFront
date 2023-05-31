@@ -1,10 +1,10 @@
 import {Factory} from './Factory';
 import {Day} from '../Day';
 import {SlotFactory} from './SlotFactory';
+import {Slot} from "../Slot";
 
 export class DayFactory implements Factory<Day> {
   constructor(
-    private dayId: number,
     private dayDate: Date,
     private slots: SlotFactory[]
   ) {
@@ -12,15 +12,24 @@ export class DayFactory implements Factory<Day> {
 
   public static day1(): DayFactory {
     return new DayFactory(
-      1,
+
       new Date('12/09/1998'),
       []
     );
   }
-
+public static averageDay():DayFactory{
+    let slots : SlotFactory[] = [];
+    for(let a = 9 ; a < 18; a++){
+      for(let b = 0; b <60;b=b+30){
+        slots.push(new SlotFactory(1,a.toString()+':'+b.toString(),1,''))
+      }
+    }
+    return new DayFactory(
+      new Date(),
+      slots)
+}
   public withSlots(): DayFactory {
     return new DayFactory(
-      this.dayId,
       this.dayDate,
       [
         SlotFactory.slot1(),
@@ -33,7 +42,6 @@ export class DayFactory implements Factory<Day> {
 
   build(): Day {
     return new Day(
-      this.dayId,
       this.dayDate,
       this.slots.map((slotFactory) => slotFactory.build())
     );

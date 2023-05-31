@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Day} from '../../models/Day';
 import {SlotFactory} from '../../models/factories/SlotFactory';
 import {DayService} from "../../services/day.service";
+import {DayFactory} from "../../models/factories/DayFactory";
 
 @Component({
   selector: 'app-time-table',
@@ -17,12 +18,9 @@ constructor(public dayService:DayService) {
 
   ngOnInit(): void {
     // Getting the current Day
-    this.day = new Day(1, new Date(20, 2, 1998),
-      [SlotFactory.slot1().build(),
-        SlotFactory.slot2().build(),
-        SlotFactory.slot3().build(),
-        SlotFactory.slot4().build()]);
+    this.day = DayFactory.averageDay().build();
     // Displaying the different Slots
+    console.log(this.day)
   }
 
 

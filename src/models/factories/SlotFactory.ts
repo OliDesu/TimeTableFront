@@ -5,9 +5,10 @@ export class SlotFactory implements Factory<Slot> {
   constructor(
     private slotId: number,
     private startTime: string,
-    private endTime: string,
     private dayId: number,
-    private activity: string
+    private activity: string,
+    private endTime?: string,
+
   ) {
   }
 
@@ -15,7 +16,6 @@ export class SlotFactory implements Factory<Slot> {
     return new SlotFactory(
       1,
       '9:00',
-      '9:30',
       1,
       'Learned how to do TypeScript'
     );
@@ -25,7 +25,6 @@ export class SlotFactory implements Factory<Slot> {
     return new SlotFactory(
       2,
       '9:30',
-      '10:30',
       1,
       'Learned how to do Java'
     );
@@ -35,7 +34,6 @@ export class SlotFactory implements Factory<Slot> {
     return new SlotFactory(
       3,
       '10:30',
-      '11:00',
       1,
       'Learned how to do PHP'
     );
@@ -45,7 +43,6 @@ export class SlotFactory implements Factory<Slot> {
     return new SlotFactory(
       4,
       '11:00',
-      '11:30',
       1,
       'Learned how to do JS'
     );
@@ -53,11 +50,10 @@ export class SlotFactory implements Factory<Slot> {
 
   build(): Slot {
     return new Slot(
-      this.slotId,
       this.startTime,
+      this.activity,
       this.endTime,
-      this.dayId,
-      this.activity
+
     );
   }
 

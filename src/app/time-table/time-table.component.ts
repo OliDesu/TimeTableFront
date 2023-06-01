@@ -13,14 +13,24 @@ import {DayFactory} from "../../models/factories/DayFactory";
 
 export class TimeTableComponent implements OnInit {
   day: Day;
+  presumedDay: Day;
 constructor(public dayService:DayService) {
 }
 
   ngOnInit(): void {
-    // Getting the current Day
-    this.day = DayFactory.averageDay().build();
-    // Displaying the different Slots
-    console.log(this.day)
+     this.dayService.getCurrentDay().subscribe(a =>{
+       this.presumedDay = a;
+     })
+    if(this.presumedDay != null){
+      this.day = this.presumedDay;
+    }
+    else{
+      this.day = DayFactory.averageDay().build();
+      this.day.dayDate = new Date();
+      // Displaying the different Slots
+      console.log(this.day)
+    }
+
   }
 
 

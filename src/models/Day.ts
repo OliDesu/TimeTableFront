@@ -2,7 +2,7 @@ import {Slot} from './Slot';
 
 export class Day {
   constructor(
-    public dayDate: Date,
+    public date: Date,
     public slots: Slot[]) {
   }
 }

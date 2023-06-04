@@ -26,7 +26,7 @@ constructor(public dayService:DayService) {
     }
     else{
       this.day = DayFactory.averageDay().build();
-      this.day.dayDate = new Date();
+      this.day.date = new Date();
       // Displaying the different Slots
       console.log(this.day)
     }

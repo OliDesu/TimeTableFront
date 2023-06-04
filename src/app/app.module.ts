@@ -17,7 +17,7 @@ import { HttpClientModule} from "@angular/common/http";
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [DayService],
   bootstrap: [AppComponent]

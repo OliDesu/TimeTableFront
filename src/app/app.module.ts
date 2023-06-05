@@ -7,6 +7,7 @@ import {TimeTableComponent} from './time-table/time-table.component';
 import {FormsModule} from '@angular/forms';
 import {DayService} from "../services/day.service";
 import { HttpClientModule} from "@angular/common/http";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HttpClientModule} from "@angular/common/http";
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,

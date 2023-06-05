@@ -1,30 +1,32 @@
-<div *ngIf ="day != undefined">
 
-<table>
-  <thead>
-  <tr>
-    <th>Time</th>
-    <th>Description</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let slot of day.slots">
-    <td>
-      {{slot.startTime}}
-    </td>
-    <td>
-      <input [(ngModel)]="slot.activity" placeholder="Enter current activity">
-    </td>
-  </tr>
-  </tbody>
-</table>
-<button (click) = 'validate()'>
-  Valider
-</button>
 
-<button (click) = 'get()'>
-  Avoir
-</button>
-
+  <div class ="display" *ngIf ="day != undefined">
+    <table style="margin-top: 5rem">
+      <thead>
+      <tr>
+        <th>Time</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let slot of day.slots">
+        <td class ="times">
+          {{slot.startTime}}
+        </td>
+        <td>
+          <input class ="input" [(ngModel)]="slot.activity" placeholder="Enter current activity">
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <button (click) = 'validate()'>
+      Valider
+    </button>
+<div class ="currentDate">
+  {{day.date}}
 
 </div>
+
+  </div>
+
+

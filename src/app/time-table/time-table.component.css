@@ -1,0 +1,21 @@
+.display{
+  display: flex;
+  flex-grow: 1;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.input{
+  width: 30rem;
+}
+.currentDate{
+  padding-top: 5rem;
+}
+.times{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

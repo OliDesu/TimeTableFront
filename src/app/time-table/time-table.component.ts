@@ -20,16 +20,20 @@ constructor(public dayService:DayService) {
   ngOnInit(): void {
      this.dayService.getCurrentDay().subscribe(a =>{
        this.presumedDay = a;
+       console.log("aaaaaa",a);
+       if(this.presumedDay){
+         this.day = this.presumedDay;
+         console.log('TU PUTA PADRE')
+
+       }
+       else{
+         this.day = DayFactory.averageDay().build();
+         this.day.date = new Date();
+         // Displaying the different Slots
+         console.log('TU PUTA MADRE')
+       }
      })
-    if(this.presumedDay != null){
-      this.day = this.presumedDay;
-    }
-    else{
-      this.day = DayFactory.averageDay().build();
-      this.day.date = new Date();
-      // Displaying the different Slots
-      console.log(this.day)
-    }
+
 
   }
 

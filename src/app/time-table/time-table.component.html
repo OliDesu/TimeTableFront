@@ -1,6 +1,6 @@
 
 
-  <div class ="display" *ngIf ="day != undefined">
+  <div class ="display" *ngIf ="day != undefined ">
     <table style="margin-top: 5rem">
       <thead>
       <tr>
@@ -23,10 +23,16 @@
       Valider
     </button>
 <div class ="currentDate">
-  {{day.date}}
+  <mat-form-field class="example-full-width">
+    <mat-label>Choose a date</mat-label>
+    <input matInput  [matDatepickerFilter]="myFilter" [matDatepicker]="picker" (dateInput)="onDateChange($event)">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
 
 </div>
 
   </div>
-
 

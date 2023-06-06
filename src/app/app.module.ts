@@ -8,6 +8,11 @@ import {FormsModule} from '@angular/forms';
 import {DayService} from "../services/day.service";
 import { HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
+import {MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -20,6 +25,12 @@ import {CommonModule} from "@angular/common";
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatFormFieldModule,
   ],
   providers: [DayService],
   bootstrap: [AppComponent]

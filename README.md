@@ -1,27 +1,28 @@
-# TimetableFront
+# Angular Application Readme
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
+This Readme file serves as documentation for the Angular application, tracking the work progress and expressing gratitude for each day. The log is updated every half an hour to provide a detailed overview of the work accomplished and promote a sense of gratitude.
 
-## Development server
+## Work Log
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The work log section below highlights the tasks completed in half-hour increments. It helps you keep track of your work and provides a sense of achievement.
 
-## Code scaffolding
+### [HH:00 - HH:30]
+- Describe the task you worked on during this time period
+- Include any relevant details, such as implemented features, bug fixes, or code refactoring
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### [HH:30 - (HH+1):00]
+- Describe the task you worked on during this time period
+- Include any relevant details, such as implemented features, bug fixes, or code refactoring
 
-## Build
+...
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Daily Gratitude
 
-## Running unit tests
+Expressing gratitude is an important practice that helps foster a positive mindset. Take a moment at the end of each day to reflect on what you are grateful for and share it in this section.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Express your gratitude for something specific that you're thankful for on this day
+- Continue adding additional points expressing your gratitude
 
-## Running end-to-end tests
+...
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Please note that the work log and expressions of gratitude in this Readme file are just placeholders. It's essential to update these sections regularly with your actual work progress and personal expressions of gratitude.

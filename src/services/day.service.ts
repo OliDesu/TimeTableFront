@@ -16,11 +16,8 @@ export class DayService {
     return this.http.get<Day>(`${this.baseUrl}/get`);
   }
   getSpecificDay(day: Day): Observable<Day> {
-    const formattedDate = formatDate(day.date, 'yyyy-MM-dd', 'en-US'); // Format the date to the desired format
-
-    const url = `${this.baseUrl}/getSpecificDay?date=${formattedDate}`; // Append the formatted date to the URL
-
-    return this.http.get<Day>(url);
+    // @ts-ignore
+    return this.http.get<Day>(`${this.baseUrl}/getSpecificDay`, { params: day });
   }
 
   getFilledDays(): Observable<Date[]> {

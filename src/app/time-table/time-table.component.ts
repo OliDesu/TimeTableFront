@@ -63,7 +63,13 @@ export class TimeTableComponent implements OnInit {
     this.chosenDate = event.value;
     const day : Day = new Day( this.chosenDate,[])
     this.dayService.getSpecificDay(day).subscribe(chosen =>{
-      this.day = chosen;
+      if (chosen.slots.length!==0) {
+        this.day = chosen;
+      } else {
+        this.day = DayFactory.averageDay().build();
+        this.day.date = new Date();
+      }
+
     });
   }
 }

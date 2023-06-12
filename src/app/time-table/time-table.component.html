@@ -19,6 +19,10 @@
       </tr>
       </tbody>
     </table>
+    <div *ngFor="let grat of day.gratitudes">
+      <input class ="gratitude"[(ngModel)]="grat.content" placeholder="Enter what you're grateful for" >
+    </div>
+
     <button (click) = 'validate()'>
       Valider
     </button>

@@ -1,11 +1,14 @@
 import {Factory} from './Factory';
 import {Day} from '../Day';
 import {SlotFactory} from './SlotFactory';
+import {GratitudeFactory} from "./GratitudeFactory";
+import {Gratitude} from "../Gratitude";
 
 export class DayFactory implements Factory<Day> {
   constructor(
     private dayDate: Date,
-    private slots: SlotFactory[]
+    private slots: SlotFactory[],
+    private gratitudes : GratitudeFactory[]
   ) {
   }
 
@@ -13,11 +16,15 @@ export class DayFactory implements Factory<Day> {
     return new DayFactory(
 
       new Date('12/09/1998'),
-      []
+      [],[]
     );
   }
 public static averageDay():DayFactory{
     let slots : SlotFactory[] = [];
+    let gratitudes : GratitudeFactory[] = [];
+    for(let a = 0 ; a <3;a++){
+      gratitudes.push(new GratitudeFactory(1,''));
+    }
     for(let a = 9 ; a < 18; a++){
       for(let b = 0; b <60;b=b+30){
         if(b ==0)
@@ -28,7 +35,7 @@ public static averageDay():DayFactory{
     }
     return new DayFactory(
       new Date(),
-      slots)
+      slots,gratitudes)
 }
   public withSlots(): DayFactory {
     return new DayFactory(
@@ -38,14 +45,15 @@ public static averageDay():DayFactory{
         SlotFactory.slot2(),
         SlotFactory.slot3(),
         SlotFactory.slot4(),
-      ]
+      ],[]
     );
   }
 
   build(): Day {
     return new Day(
       this.dayDate,
-      this.slots.map((slotFactory) => slotFactory.build())
+      this.slots.map((slotFactory) => slotFactory.build()),
+      this.gratitudes.map((gratitude) => gratitude.build())
     );
   }
 

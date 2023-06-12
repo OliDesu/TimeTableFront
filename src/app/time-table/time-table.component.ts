@@ -61,9 +61,9 @@ export class TimeTableComponent implements OnInit {
 
   onDateChange(event: MatDatepickerInputEvent<Date>): void {
     this.chosenDate = event.value;
-    const day: Day = new Day(this.chosenDate, [])
+    const day: Day = new Day(this.chosenDate, [],[])
     this.dayService.getSpecificDay(day).subscribe(chosen => {
-      if (chosen.slots.length !== 0) {
+      if (chosen.slots.length !== 0 || chosen.gratitudes.length !==0) {
         this.day = chosen;
       } else {
         this.day = DayFactory.averageDay().build();

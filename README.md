@@ -24,5 +24,6 @@ Expressing gratitude is an important practice that helps foster a positive minds
 - Continue adding additional points expressing your gratitude
 
 ...
+I'll be adding also a new thing about a rate for a certain date
 
 Please note that the work log and expressions of gratitude in this Readme file are just placeholders. It's essential to update these sections regularly with your actual work progress and personal expressions of gratitude.
